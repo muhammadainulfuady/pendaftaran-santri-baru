@@ -5,7 +5,7 @@ require_once "connect.php";
 function login(string $username, string $password)
 {
     global $dbc;
-    $stmt = $dbc->prepare("SELECT username, password, role FROM users WHERE username = :username AND password = :password AND role = 'santri'");
+    $stmt = $dbc->prepare("SELECT username, password, role FROM users WHERE username = :username AND password = :password");
     $stmt->execute([
         ":username" => $username,
         ":password" => $password,
