@@ -8,7 +8,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $islogin = login($username, $password);
     if ($islogin) {
-        echo "pasword benar";
+        switch ($islogin) {
+            case $islogin['role'] === 'admin':
+                // redirect ke dashboard admin
+                break;
+            case $islogin['role'] === 'santri':
+                // redirect ke dashboard admin
+                break;
+        }
     } else {
         echo "Tidak bisa login salah";
     }
