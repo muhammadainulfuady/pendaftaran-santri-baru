@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #f8fafc; /* Abu-abu super terang/bersih */
+    color: #1e293b;
+    display: flex;
+    min-height: 100vh;
+}
+/* Layout Sidebar (Sebelah Kiri) */
+.sidebar {
+    width: 260px;
+    background-color: #0f172a; /* Slate gelap elegan */
+    color: #f8fafc;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 24px 16px;
+    display: flex;
+    flex-content: column;
+    justify-content: space-between;
+}
+.sidebar-brand {
+    font-size: 18px;
+    font-weight: 700;
+    color: #38bdf8; /* Aksen warna cyan/biru muda halus */
+    margin-bottom: 32px;
+    padding-left: 12px;
+    letter-spacing: -0.5px;
+}
+.sidebar-menu {
+    list-style: none;
+    flex-grow: 1;
+}
+.sidebar-menu li {
+    margin-bottom: 8px;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    color: #94a3b8;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+/* State ketika menu aktif atau di-hover */
+.sidebar-menu a:hover, .sidebar-menu li.active a {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+.sidebar-menu a.logout {
+    color: #f87171; /* Warna merah soft untuk logout */
+}
+
+.sidebar-menu a.logout:hover {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+}
+
+/* Layout Konten Utama (Sebelah Kanan) */
+.main-content {
+    margin-left: 260px; /* Jarak pas seukuran lebar sidebar */
+    padding: 40px;
+    width: calc(100% - 260px);
+}
+
+/* Bagian Header Atas */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.content-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.content-header .user-info {
+    font-size: 14px;
+    color: #64748b;
+    background: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Grid Card/Kotak Statistik */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.stat-card h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.stat-card .value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+}
